@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encryption & Decryption Tool</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Include CryptoJS library for AES -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+
+  <!-- Include Forge library for RSA -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/forge/0.10.0/forge.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Encryption & Decryption Tool</h1>
+
+    <!-- AES Encryption Section -->
+    <section class="aes-section">
+      <h2>AES Encryption/Decryption</h2>
+      <label for="aes-text">Text:</label>
+      <textarea id="aes-text" rows="3" placeholder="Enter text"></textarea>
+      <label for="aes-key">Key:</label>
+      <input type="password" id="aes-key" placeholder="Enter key">
+      <button onclick="encryptAES()">Encrypt AES</button>
+      <button onclick="decryptAES()">Decrypt AES</button>
+      <textarea id="aes-output" rows="3" readonly></textarea>
+    </section>
+
+  <!-- RSA Encryption Section -->
+<section class="rsa-section">
+    <h2>RSA Encryption/Decryption</h2>
+    <label for="rsa-text">Text:</label>
+    <textarea id="rsa-text" rows="3" placeholder="Enter text"></textarea>
+    <button onclick="generateRSAKeys()">Generate RSA Keys</button>
+    <button onclick="encryptRSA()">Encrypt RSA</button>
+    <button onclick="decryptRSA()">Decrypt RSA</button>
+    <textarea id="rsa-output" rows="10" readonly></textarea> <!-- Increased size for keys -->
+  </section>
+  
+    <!-- Caesar Cipher Section -->
+    <section class="caesar-section">
+      <h2>Caesar Cipher Encryption/Decryption</h2>
+      <label for="caesar-text">Text:</label>
+      <textarea id="caesar-text" rows="3" placeholder="Enter text"></textarea>
+      <label for="caesar-shift">Shift:</label>
+      <input type="number" id="caesar-shift" placeholder="Enter shift value">
+      <button onclick="encryptCaesar()">Encrypt Caesar</button>
+      <button onclick="decryptCaesar()">Decrypt Caesar</button>
+      <textarea id="caesar-output" rows="3" readonly></textarea>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
